@@ -39,7 +39,7 @@ class App extends Component {
               <tbody>
               <tr>
                 <th style={{border: '1px solid black', borderCollapse: 'collapse'}}>Name</th>
-                <th style={{border: '1px solid black', borderCollapse: 'collapse'}}>Pressure</th>
+                <th style={{border: '1px solid black', borderCollapse: 'collapse'}}>Pressure (PSI)</th>
                 <th style={{border: '1px solid black', borderCollapse: 'collapse'}}>Battery</th>
               </tr>
               {this.state.wpsus.map((wpsu) => {
@@ -48,7 +48,7 @@ class App extends Component {
                       {wpsu.name}
                     </td>
                     <td style={{border: '1px solid black', borderCollapse: 'collapse'}}>
-                      {wpsu.pressure}
+                      {wpsu.pressure/100}
                     </td>
                     <td style={{border: '1px solid black', borderCollapse: 'collapse'}}>
                       {wpsu.battery ? wpsu.battery.value : null}% {wpsu.battery && wpsu.battery.charging==="1" ? "Charging" : null}
